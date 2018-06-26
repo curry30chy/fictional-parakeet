@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .big {
+            height: 243px;
+            width: 220px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            perspective: 900px;
+        }
+
+        .center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .big .wei {
+            width: 360px;
+            height: 270px;
+            transform-style: preserve-3d;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .big .wei img {
+            width: 100%;
+            margin: 0 20px;
+            position: absolute;
+        }
+
+        .one {
+            transform: rotateY(0deg) translateZ(347px);
+        }
+
+        .two {
+            transform: rotateY(60deg) translateZ(347px);
+        }
+
+        .three {
+            transform: rotateY(120deg) translateZ(347px);
+        }
+
+        .four {
+            transform: rotateY(180deg) translateZ(347px);
+        }
+
+        .five {
+            transform: rotateY(240deg) translateZ(347px);
+        }
+
+        .six {
+            transform: rotateY(300deg) translateZ(347px);
+        }
+
+        .wei:hover {
+            animation: change 12s linear;
+        }
+
+
+        @keyframes change {
+            from {
+                transform: translate(-50%, -50%) rotateY(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="wei">
+            <img src="images/dog2.jpg" class="center">
+            <img src="images/dog.gif" class="one">
+            <img src="images/dog.gif" class="two">
+            <img src="images/dog.gif" class="three">
+            <img src="images/dog.gif" class="four">
+            <img src="images/dog.gif" class="five">
+            <img src="images/dog.gif" class="six">
+        </div>
+    </div>
+
+</body>
+
+</html>

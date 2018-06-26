@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        .bg {
+            width: 500px;
+            height: 500px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -30%) rotatez(45deg);
+        }
+
+        .two,
+        .three {
+            width: 200px;
+            height: 200px;
+            background: -webkit-linear-gradient(bottom, #ff0000, rgb(255, 47, 47));
+            transform: rotateZ(5deg);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .two {
+            top: 112px;
+            left: 72px;
+            z-index: 2;
+        }
+
+        .three {
+            top: 112px;
+            left: 228px;
+        }
+
+        .bg>div {
+            animation: change .5s linear infinite alternate;
+        }
+
+        @keyframes change {
+            form {
+                box-shadow: 0px 0px 5px 5px #ff0000;
+            }
+            to {
+                box-shadow: 0px 0px 20px 5px #ff0000;
+            }
+        }
+
+        h1{
+            position: absolute;
+            top: 10%;
+            left: 45%;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+    <h1>日你妈卖批</h1>
+</body>
+
+</html>

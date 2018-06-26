@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body>div{
+            float: left;
+        }
+        .ul{
+            width: 102px;
+            height: 52px;
+            transform-style: preserve-3d;
+            transition: all .3s;
+        }
+
+        .ul>div {
+            width: 100px;
+            height: 50px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+        }
+        
+        .ul :first-child{
+            background: gray;
+            transform: rotateX(0deg) translateZ(25px);
+        }
+
+        .ul .no {
+            background: #555;
+            transform: rotateX(90deg) translateZ(25px);
+        }
+
+
+        .ul:hover{
+            transform:  rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ul">
+        <div>ROG GX501</div>
+        <div class="no">买不起</div>
+    </div>
+    <div class="ul">
+        <div>ROG GM501</div>
+        <div class="no">买不起</div>
+    </div>
+    <div class="ul">
+        <div>MSI GS65</div>
+        <div class="no">买不起</div>
+    </div>
+    <div class="ul">
+        <div>MSI GS73</div>
+        <div class="no">买不起</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #music{
+            width:60px ;
+            height:60px;
+            border-radius: 50%;
+            background-color: pink;
+        }
+        .music{
+
+            background:url('music_03.png') no-repeat;
+            transition: all 2s;
+        }
+        .music2{
+            background:url('music1_03.png') no-repeat;
+            transition: all 2s;
+        }
+
+
+
+        #video{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="music" id="music">
+    <audio id="audio" src="spring.mp3" autoplay loop ></audio>
+</div>
+
+
+<div class="ve start" id="ve">
+    <video  id="video" src="mp4.mp4"  loop ></video>
+</div>
+
+<!--<img class="music" src="music_03.png" alt="">
+<img class="music" src="music1_03.png" alt="">-->
+<script>
+    var music=document.getElementById('music');
+    var audio=document.getElementById('audio');
+    var ve=document.getElementById('ve');
+    var video=document.getElementById('video');
+    music.onclick=function () {
+        if(this.classList.contains('music')){
+            this.classList.remove('music');
+            this.classList.add('music2');
+            audio.pause();
+        }else{
+            console.log(this.classList.contains('music2'));
+            this.classList.remove('music2');
+            this.classList.add('music');
+            audio.play();
+        }
+    }
+
+
+
+
+    ve.onclick=function(){
+        if(this.classList.contains('start')){
+            this.classList.remove('start');
+            video.play();
+        }else{
+            this.classList.add('start');
+            video.pause()
+        }
+    }
+</script>
+</body>
+</html>
