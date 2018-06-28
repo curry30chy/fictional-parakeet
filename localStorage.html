@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <span>搜索</span>
+    <input type="text" name="history">
+    <input type="button" value="提交" id="a">
+    <input type="button" value="获取" id="b">
+    <input type="button" value="清空" id="c">
+    <div>
+
+    </div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var div = document.querySelector('div');
+        var input = document.querySelector('input[type=text]');
+        var a = document.querySelector('#a');
+        var b = document.querySelector('#b');
+        var c = document.querySelector('#c');
+        var arr = [];
+
+        var html = '';
+        get();
+        div.innerHTML=html;
+
+        function get() {
+            var json = window.localStorage.getItem('history');
+            arr = JSON.parse(json) || [];
+            html = '';
+            if (json) {
+                for (var i = 0; i < arr.length; i++) {
+                    html += '<P>'+ arr[i] +'</P>';
+                };
+            };
+            return html;
+        }
+        
+        a.onclick = function() {
+            var val = input.value;
+            arr.push(val);
+            var history = JSON.stringify( arr );
+            window.localStorage.setItem('history',history);
+            var p=document.createElement("p");
+            var node=document.createTextNode(val);
+            p.appendChild(node);
+            div.appendChild(p);
+        };
+        
+
+        b.onclick = function () {
+            div.innerHTML = '';
+            var html = get();
+            div.innerHTML=html;
+        };
+
+        c.onclick = function () {
+            window.localStorage.removeItem('history');
+            div.innerHTML = '';
+        };
+    }
+
+
+</script>
